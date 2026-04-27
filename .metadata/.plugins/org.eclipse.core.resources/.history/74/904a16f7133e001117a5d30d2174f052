@@ -1,0 +1,30 @@
+package garbagec;
+
+public class customer {
+	protected void finalize() {
+		System.out.println("main method started");
+	}
+	void getcustomer() {
+		System.out.println("customer");
+	
+	}
+
+
+	public static void main(String[] args) {
+		System.out.println("method started");
+		customer c1 = new customer();
+		customer c2 = new customer();
+		customer c3 = new customer();
+		//nullify the objects type 1
+		c1 = null;
+		//re- assissing the objects
+		//c1=c3;
+		System.out.println(c1);// 65b3120a
+		System.out.println(c2);// 6f539caf
+		System.out.println(c3);// 79fc0f2f
+		System.gc();
+
+
+	}
+
+}
